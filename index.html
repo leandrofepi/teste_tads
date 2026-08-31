@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comandos DIT</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --primary: #2457f5;
+        --primary-dark: #183dbd;
+        --secondary: #1f9d8a;
+        --text: #1d2433;
+        --muted: #5f6b7a;
+        --border: #dfe7f3;
+        --accent: #eaf1ff;
+        --warning: #fff4d8;
+        --shadow: 0 12px 30px rgba(26, 38, 70, 0.10);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #edf4ff 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: #fff;
+        border-radius: 22px;
+        padding: 40px 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        margin: 0 0 14px;
+        font-size: clamp(2rem, 3vw, 3rem);
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 760px;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 18px;
+        background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.27);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+        margin-top: 32px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 22px 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+      }
+
+      .tag {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--primary-dark);
+        border-radius: 8px;
+        padding: 6px 10px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .code {
+        display: block;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        overflow-x: auto;
+      }
+
+      .summary {
+        margin-top: 34px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 26px 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .summary h3 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        color: var(--text);
+        font-size: 1.5rem;
+      }
+
+      .summary ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      @media (max-width: 600px) {
+        .hero { padding: 28px 20px; }
+        .card, .summary { padding-left: 16px; padding-right: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div class="badge">DIT</div>
+        <h1>Principais comandos DIT</h1>
+        <p>
+          Esta página apresenta, de forma didática, os principais comandos usados em DIT,
+          com explicação breve e exemplos práticos para facilitar o entendimento.
+        </p>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="tag">INSERT</div>
+          <h2>Inserir dados</h2>
+          <p>Usado para adicionar novos registros em uma tabela.</p>
+          <code>INSERT INTO clientes (nome, email) VALUES ('Ana', 'ana@email.com');</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">SELECT</div>
+          <h2>Consultar dados</h2>
+          <p>Permite visualizar informações armazenadas e filtrar os resultados.</p>
+          <code>SELECT nome, email FROM clientes WHERE status = 'ativo';</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">UPDATE</div>
+          <h2>Atualizar registros</h2>
+          <p>Altera valores já existentes em uma tabela.</p>
+          <code>UPDATE clientes SET email = 'nova@email.com' WHERE id = 5;</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">DELETE</div>
+          <h2>Excluir dados</h2>
+          <p>Remove registros da tabela, desde que a condição seja especificada.</p>
+          <code>DELETE FROM clientes WHERE id = 10;</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">CREATE</div>
+          <h2>Criar tabelas</h2>
+          <p>Define uma nova estrutura de armazenamento de dados.</p>
+          <code>CREATE TABLE produtos (id INT PRIMARY KEY, nome VARCHAR(100));</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">ALTER</div>
+          <h2>Modificar estrutura</h2>
+          <p>Permite alterar colunas, tipos e propriedades de uma tabela existente.</p>
+          <code>ALTER TABLE produtos ADD preco DECIMAL(10,2);</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">DROP</div>
+          <h2>Excluir estrutura</h2>
+          <p>Remove completamente uma tabela ou objeto do banco de dados.</p>
+          <code>DROP TABLE produtos;</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">WHERE</div>
+          <h2>Filtrar resultados</h2>
+          <p>Restringe os registros retornados com base em condições específicas.</p>
+          <code>SELECT * FROM clientes WHERE cidade = 'Recife' AND ativo = 1;</code>
+        </section>
+
+        <section class="card">
+          <div class="tag">ORDER BY</div>
+          <h2>Ordenar resultados</h2>
+          <p>Organiza os dados de acordo com uma coluna escolhida.</p>
+          <code>SELECT * FROM clientes ORDER BY nome ASC;</code>
+        </section>
+      </main>
+
+      <section class="summary">
+        <h3>Resumo rápido</h3>
+        <ul>
+          <li><strong>INSERT:</strong> adiciona novos registros.</li>
+          <li><strong>SELECT:</strong> consulta e mostra dados.</li>
+          <li><strong>UPDATE:</strong> altera informações já existentes.</li>
+          <li><strong>DELETE:</strong> remove registros.</li>
+          <li><strong>CREATE/ALTER/DROP:</strong> controlam a estrutura das tabelas.</li>
+          <li><strong>WHERE/ORDER BY:</strong> ajudam a filtrar e organizar os resultados.</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
