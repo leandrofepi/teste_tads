@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tutorial básico de HTML</title>
+</head>
+<body>
+	<header>
+		<h1>Tutorial básico de HTML</h1>
+		<p>HTML estrutura o conteúdo de páginas web usando elementos e tags.</p>
+	</header>
+
+	<nav aria-label="Navegação principal">
+		<a href="#estrutura">Estrutura</a> |
+		<a href="#texto">Texto</a> |
+		<a href="#listas">Listas</a> |
+		<a href="#multimidia">Multimídia</a> |
+		<a href="#formulario">Formulários</a>
+	</nav>
+
+	<main>
+		<section id="estrutura">
+			<h2>1. Estrutura básica</h2>
+			<p><code>&lt;html&gt;</code> contém a página; <code>&lt;head&gt;</code> guarda configurações; e <code>&lt;body&gt;</code> contém o conteúdo visível.</p>
+			<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+	&lt;head&gt;...&lt;/head&gt;
+	&lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+		</section>
+
+		<section id="texto">
+			<h2>2. Títulos e texto</h2>
+			<h3>Use títulos hierárquicos</h3>
+			<p><strong>&lt;strong&gt;</strong> destaca texto importante, <em>&lt;em&gt;</em> dá ênfase e <mark>&lt;mark&gt;</mark> realça um trecho.</p>
+			<p>Use <code>&lt;p&gt;</code> para parágrafos e <code>&lt;br&gt;</code> para uma quebra de linha.<br>Esta é uma nova linha.</p>
+			<blockquote>“A simplicidade é a alma da eficiência.”</blockquote>
+		</section>
+
+		<section id="listas">
+			<h2>3. Listas e links</h2>
+			<h3>Lista não ordenada</h3>
+			<ul>
+				<li>Primeiro item</li>
+				<li>Segundo item</li>
+			</ul>
+			<h3>Lista ordenada</h3>
+			<ol>
+				<li>Planeje o conteúdo</li>
+				<li>Escreva o HTML</li>
+				<li>Teste no navegador</li>
+			</ol>
+			<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener">Consulte a documentação do HTML</a>.</p>
+		</section>
+
+		<section id="multimidia">
+			<h2>4. Imagens e tabelas</h2>
+			<img src="https://via.placeholder.com/320x120" alt="Exemplo de imagem decorativa">
+			<table>
+				<caption>Tags comuns</caption>
+				<thead><tr><th>Tag</th><th>Função</th></tr></thead>
+				<tbody>
+					<tr><td><code>&lt;div&gt;</code></td><td>Bloco genérico</td></tr>
+					<tr><td><code>&lt;span&gt;</code></td><td>Trecho em linha</td></tr>
+					<tr><td><code>&lt;article&gt;</code></td><td>Conteúdo independente</td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section id="formulario">
+			<h2>5. Formulários</h2>
+			<form action="#" method="post">
+				<label for="nome">Nome:</label>
+				<input type="text" id="nome" name="nome" required>
+				<label for="email">E-mail:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="mensagem">Mensagem:</label>
+				<textarea id="mensagem" name="mensagem" rows="4"></textarea>
+				<button type="submit">Enviar</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2024 Tutorial de HTML. Use tags semânticas para melhorar a acessibilidade.</p>
+	</footer>
+</body>
+</html>
