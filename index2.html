@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principais comandos do Git</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #2f6fed;
+      --primary-dark: #234db4;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #dfe7f5;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef4ff, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(47, 111, 237, 0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.3rem;
+      border-bottom: 2px solid #e8eefc;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    code {
+      display: inline-block;
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    .note {
+      margin-top: 30px;
+      background: #edf4ff;
+      border-left: 5px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 8px;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Principais comandos do Git</h1>
+    <p class="subtitle">Lista de comandos essenciais para começar a trabalhar com controle de versão.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Inicialização e configuração</h2>
+        <ul>
+          <li><code>git init</code> - Inicializa um repositório Git na pasta atual.</li>
+          <li><code>git clone &lt;url&gt;</code> - Clona um repositório remoto para a máquina local.</li>
+          <li><code>git config --global user.name "Seu Nome"</code> - Define o nome do autor.</li>
+          <li><code>git config --global user.email "seu@email.com"</code> - Define o e-mail do autor.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Trabalho com arquivos</h2>
+        <ul>
+          <li><code>git status</code> - Mostra o estado dos arquivos do repositório.</li>
+          <li><code>git add &lt;arquivo&gt;</code> - Adiciona um arquivo ao staging.</li>
+          <li><code>git add .</code> - Adiciona todos os arquivos modificados ao staging.</li>
+          <li><code>git rm &lt;arquivo&gt;</code> - Remove um arquivo do repositório e do diretório.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Commit e histórico</h2>
+        <ul>
+          <li><code>git commit -m "mensagem"</code> - Cria um commit com uma mensagem descritiva.</li>
+          <li><code>git log</code> - Exibe o histórico de commits.</li>
+          <li><code>git log --oneline</code> - Mostra o histórico em uma linha por commit.</li>
+          <li><code>git diff</code> - Exibe as diferenças entre arquivos modificados e o último commit.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Branches e merge</h2>
+        <ul>
+          <li><code>git branch</code> - Lista as branches existentes.</li>
+          <li><code>git checkout -b &lt;nome&gt;</code> - Cria e troca para uma nova branch.</li>
+          <li><code>git checkout &lt;nome&gt;</code> - Troca para uma branch existente.</li>
+          <li><code>git merge &lt;nome&gt;</code> - Mescla uma branch na branch atual.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Repositório remoto</h2>
+        <ul>
+          <li><code>git remote -v</code> - Lista os repositórios remotos configurados.</li>
+          <li><code>git push origin &lt;branch&gt;</code> - Envia alterações para o repositório remoto.</li>
+          <li><code>git pull origin &lt;branch&gt;</code> - Atualiza a branch local com mudanças do remoto.</li>
+          <li><code>git fetch</code> - Busca atualizações do remoto sem mesclar.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Desfazer e corrigir</h2>
+        <ul>
+          <li><code>git restore &lt;arquivo&gt;</code> - Restaura um arquivo para o último estado commitado.</li>
+          <li><code>git reset --hard HEAD</code> - Descarta todas as alterações locais.</li>
+          <li><code>git revert &lt;hash&gt;</code> - Cria um commit que reverte um commit anterior.</li>
+          <li><code>git stash</code> - Guarda alterações temporariamente sem fazer commit.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="note">
+      Dica: use <code>git status</code> com frequência para acompanhar o estado do seu projeto e manter o controle das alterações antes de realizar commits.
+    </div>
+  </div>
+</body>
+</html>
